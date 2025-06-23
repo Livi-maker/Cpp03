@@ -17,8 +17,10 @@ class ClapTrap
 		void	beRepaired(unsigned int amount);
 
 	private:
-		std::string name;
+		std::string		_name;
 		unsigned int	_hitpoints;
-		unsigned int _energy;
-		unsigned int _damage;
+		unsigned int	_energy;
+		unsigned int	_damage;
 };
+
+#endif
