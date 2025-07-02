@@ -1,6 +1,6 @@
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap(std::string name) : ClapTrap(), _name(name)
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
 	_hitpoints = 100;
 	_energy = 50;
@@ -8,9 +8,8 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(), _name(name)
 	std::cout << "ScavTrap " << name << " was created!" << std::endl;
 }
 
-ScavTrap::ScavTrap(const ScavTrap& old)
+ScavTrap::ScavTrap(const ScavTrap& old) : ClapTrap(old)
 {
-	*this = old;
 	std::cout << "ScavTrap copy constructor called" << std::endl;
 }
 
@@ -21,13 +20,10 @@ ScavTrap::~ScavTrap(void)
 
 ScavTrap&   ScavTrap::operator = (const ScavTrap& old)
 {
-	ScavTrap    newOne(old._name);
-	ScavTrap*	pointer = &newOne;
-
-	newOne._hitpoints = old._hitpoints;
-	newOne._energy = old._energy;
-	newOne._damage = old._damage;
-	return (*pointer);
+	this->_hitpoints = old._hitpoints;
+	this->_energy = old._energy;
+	this->_damage = old._damage;
+	return (*this);
 }
 
 void    ScavTrap::attack(const std::string& target)
@@ -41,15 +37,13 @@ void    ScavTrap::attack(const std::string& target)
 	_energy -= 1;
 }
 
-void    ScavTrap::takeDamage(unsigned int amount)
+void    ScavTrap::takeDamage(int amount)
 {
 	std::cout << "ScavTrap " << this->_name << " was attacked and lost " << amount << " hitpoints" << std::endl;
 	this->_hitpoints -= amount;
-	if (_hitpoints <= 0)
-		std::cout << "ScavTrap " << this->_name << " has no hitpoints left" << std::endl;
 }
 
-void    ScavTrap::beRepaired(unsigned int amount)
+void    ScavTrap::beRepaired(int amount)
 {
 	if (this->_hitpoints < 1 || this->_energy < 1)
 	{

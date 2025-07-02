@@ -24,6 +24,7 @@ ClapTrap&	ClapTrap::operator = (const ClapTrap& old)
 	this->_hitpoints = old._hitpoints;
 	this->_energy = old._energy;
 	this->_damage = old._damage;
+	std::cout << "copy operator called" << std::endl;
 	return (*this);
 }
 
