@@ -14,8 +14,8 @@ class ClapTrap
 		ClapTrap& operator = (const ClapTrap& old);
 		virtual ~ClapTrap(void);
 		virtual void	attack(const std::string& target);
-		virtual void	takeDamage(int amount);
-		virtual void	beRepaired(int amount);
+		void	takeDamage(int amount);
+		void	beRepaired(int amount);
 
 	protected:
 		std::string		_name;
