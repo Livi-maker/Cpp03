@@ -13,7 +13,6 @@ class DiamondTrap : virtual public ScavTrap, virtual public FlagTrap
 		DiamondTrap(const DiamondTrap& old);
 		DiamondTrap& operator = (const DiamondTrap& old);
 		~DiamondTrap(void);
-		using ScavTrap::attack;
 		void	whoAmI(void) const;
 
 	private:

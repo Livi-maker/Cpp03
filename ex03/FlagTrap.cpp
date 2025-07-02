@@ -25,16 +25,6 @@ FlagTrap&   FlagTrap::operator = (const FlagTrap& old)
 	return (*this);
 }
 
-void    FlagTrap::attack(const std::string& target)
-{
-	if (_hitpoints < 1 || _energy < 1)
-	{
-		std::cout << "Ops... " << _name << " has not enough hitpoints or energy points left to attack" << std::endl;
-		return ;
-	}
-	std::cout << "WOW! " << _name << " attacks " << target << ", causing " << _damage << " points of damage!" << std::endl;
-	_energy -= 1;
-}
 
 void	FlagTrap::highFivesGuys(void) const
 {

@@ -13,7 +13,6 @@ class FlagTrap : virtual public ClapTrap
 		FlagTrap(const FlagTrap& old);
 		FlagTrap& operator = (const FlagTrap& old);
 		~FlagTrap(void);
-		void	attack(const std::string& target);
 		void	highFivesGuys(void) const;
 };
 
