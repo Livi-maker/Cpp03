@@ -1,10 +1,17 @@
 #include "FlagTrap.hpp"
 
-FlagTrap::FlagTrap(std::string name) : ClapTrap(name)
+FlagTrap::FlagTrap(void) : ClapTrap()
 {
 	_energy = 100;
 	_damage = 30;
-	std::cout << "FlagTrap " << name << " was created!" << std::endl;
+	std::cout << "FlagTrap " << _name << " was created!" << std::endl;
+}
+FlagTrap::FlagTrap(std::string name) : ClapTrap()
+{
+	_name = name;
+	_energy = 100;
+	_damage = 30;
+	std::cout << "FlagTrap " << _name << " was created!" << std::endl;
 }
 
 FlagTrap::FlagTrap(const FlagTrap& old) : ClapTrap(old)

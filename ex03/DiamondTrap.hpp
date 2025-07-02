@@ -9,6 +9,7 @@
 class DiamondTrap : virtual public ScavTrap, virtual public FlagTrap
 {
 	public:
+		DiamondTrap(void);
 		DiamondTrap(std::string name);
 		DiamondTrap(const DiamondTrap& old);
 		DiamondTrap& operator = (const DiamondTrap& old);

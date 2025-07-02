@@ -3,6 +3,14 @@
 #include "DiamondTrap.hpp"
 #include "ClapTrap.hpp"
 
+DiamondTrap::DiamondTrap(void) : ClapTrap(), ScavTrap(), FlagTrap()
+{
+	_hitpoints = FlagTrap::_hitpoints;
+	_energy = ScavTrap::_energy;
+	_damage = FlagTrap::_damage;
+
+	std::cout << "DiamondTrap " << _name << " was created!" << std::endl;
+}
 DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"), ScavTrap(name), FlagTrap(name)
 {
 	_name = name;

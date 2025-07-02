@@ -9,6 +9,7 @@
 class FlagTrap : virtual public ClapTrap
 {
 	public:
+		FlagTrap(void);
 		FlagTrap(std::string name);
 		FlagTrap(const FlagTrap& old);
 		FlagTrap& operator = (const FlagTrap& old);

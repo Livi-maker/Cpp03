@@ -1,11 +1,18 @@
 #include "ClapTrap.hpp"
 
+ClapTrap::ClapTrap(void)
+{
+	_hitpoints = 10;
+	_energy = 10;
+	_damage = 0;
+	std::cout << "ClapTrap was created!" << std::endl;
+}
 ClapTrap::ClapTrap(std::string name) : _name(name)
 {
 	_hitpoints = 10;
 	_energy = 10;
 	_damage = 0;
-	std::cout << "ClapTrap " << name << " was created!" << std::endl;
+	std::cout << "ClapTrap " << _name << " was created!" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap& old)
