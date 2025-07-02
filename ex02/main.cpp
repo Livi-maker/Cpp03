@@ -4,8 +4,8 @@
 
 int	main()
 {
-	ClapTrap	robot("Liv");
-	ScavTrap	scavtrap("Luiss");
+	ClapTrap	robot("claptrap");
+	ScavTrap	scavtrap("scavtrap");
 
 	robot.attack("42");
 	robot.takeDamage(5);
@@ -16,7 +16,7 @@ int	main()
 	scavtrap.beRepaired(15);
 	scavtrap.guardGate();
 
-	FlagTrap	another("robot");
+	FlagTrap	another("flagtrap");
 
 	another.attack("Luiss");
 	another.takeDamage(50);

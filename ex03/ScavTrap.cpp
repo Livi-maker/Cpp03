@@ -30,10 +30,10 @@ void    ScavTrap::attack(const std::string& target)
 {
 	if (_hitpoints < 1 || _energy < 1)
 	{
-		std::cout << "Oh no! " << _name << " has not enough hitpoints or energy points left to attack" << std::endl;
+		std::cout << "Oh no! " << this->_name << " has not enough hitpoints or energy points left to attack" << std::endl;
 		return ;
 	}
-	std::cout << "Let's go! " << _name << " attacks " << target << ", causing " << _damage << " points of damage!" << std::endl;
+	std::cout << "Let's go! " << this->_name << " attacks " << target << ", causing " << _damage << " points of damage!" << std::endl;
 	_energy -= 1;
 }
 

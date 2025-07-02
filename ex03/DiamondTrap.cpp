@@ -3,11 +3,9 @@
 #include "DiamondTrap.hpp"
 #include "ClapTrap.hpp"
 
-DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name), ScavTrap(name), FlagTrap(name)
+DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"), ScavTrap(name), FlagTrap(name)
 {
 	_name = name;
-	ClapTrap::_name = name;
-	ClapTrap::_name.append("_clap_name");
 	_hitpoints = FlagTrap::_hitpoints;
 	_energy = ScavTrap::_energy;
 	_damage = FlagTrap::_damage;
