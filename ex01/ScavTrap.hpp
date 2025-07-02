@@ -6,7 +6,7 @@
 # include <cmath>
 # include "ClapTrap.hpp"
 
-class ScavTrap
+class ScavTrap : public ClapTrap
 {
 	public:
 		ScavTrap(std::string name);
@@ -19,7 +19,7 @@ class ScavTrap
 		void	guardGate(void) const;
 
 	private:
-		std::string     _name;
+		std::string		_name;
 		int				_hitpoints;
 		int				_energy;
 		int				_damage;

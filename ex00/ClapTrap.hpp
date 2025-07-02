@@ -13,14 +13,14 @@ class ClapTrap
 		ClapTrap& operator = (const ClapTrap& old);
 		~ClapTrap(void);
 		void	attack(const std::string& target);
-		void	takeDamage(unsigned int amount);
-		void	beRepaired(unsigned int amount);
+		void	takeDamage(int amount);
+		void	beRepaired(int amount);
 
 	private:
 		std::string		_name;
-		unsigned int	_hitpoints;
-		unsigned int	_energy;
-		unsigned int	_damage;
+		int	_hitpoints;
+		int	_energy;
+		int	_damage;
 };
 
 #endif

@@ -8,6 +8,7 @@
 class ClapTrap
 {
 	public:
+		ClapTrap();
 		ClapTrap(std::string name);
 		ClapTrap(const ClapTrap& old);
 		ClapTrap& operator = (const ClapTrap& old);

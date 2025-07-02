@@ -1,5 +1,8 @@
 #include "ClapTrap.hpp"
 
+ClapTrap::ClapTrap(void)
+{}
+
 ClapTrap::ClapTrap(std::string name) : _name(name)
 {
 	_hitpoints = 10;
@@ -22,12 +25,12 @@ ClapTrap::~ClapTrap(void)
 ClapTrap&	ClapTrap::operator = (const ClapTrap& old)
 {
 	ClapTrap	New(old._name);
-	ClapTrap&	reference = New;
+	ClapTrap*	pointer = &New;
 
 	New._hitpoints = old._hitpoints;
 	New._energy = old._energy;
 	New._damage = old._damage;
-	return (reference);
+	return (*pointer);
 }
 
 void	ClapTrap::attack(const std::string& target)
@@ -61,4 +64,4 @@ void	ClapTrap::beRepaired(unsigned int amount)
 	std::cout << "ClapTrap " << this->_name << " gained " << amount << " hitpoints." << std::endl;
 	_hitpoints += amount;
 }
-	
+

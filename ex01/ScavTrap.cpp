@@ -1,6 +1,6 @@
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap(std::string name) : _name(name)
+ScavTrap::ScavTrap(std::string name) : ClapTrap(), _name(name)
 {
 	_hitpoints = 100;
 	_energy = 50;
@@ -21,13 +21,13 @@ ScavTrap::~ScavTrap(void)
 
 ScavTrap&   ScavTrap::operator = (const ScavTrap& old)
 {
-	ScavTrap    New(old._name);
-	ScavTrap&   reference = New;
+	ScavTrap    newOne(old._name);
+	ScavTrap*	pointer = &newOne;
 
-	New._hitpoints = old._hitpoints;
-	New._energy = old._energy;
-	New._damage = old._damage;
-	return (reference);
+	newOne._hitpoints = old._hitpoints;
+	newOne._energy = old._energy;
+	newOne._damage = old._damage;
+	return (*pointer);
 }
 
 void    ScavTrap::attack(const std::string& target)
